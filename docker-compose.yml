@@ -4,17 +4,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
-    volumes:
-      - /usr/node-app/node_modules
-      - .:/usr/node-app
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /usr/node-app/node_modules
-      - .:/usr/node-app
-    command: ["yarn", "test"]
+      - '80:80'

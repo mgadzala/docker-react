@@ -8,3 +8,13 @@ before_install:
 
 script:
   - docker run mgadzala/docker-react yarn test --watchAll=false
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-549977109531"
+  bucket_path: "docker-react"
+  on:
+    branch: master
